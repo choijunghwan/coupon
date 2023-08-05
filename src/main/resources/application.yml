@@ -1,0 +1,24 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        storage_engine: innodb
+
+  datasource:
+    hikari:
+      jdbc-url: jdbc:mysql://localhost:3306/coupon?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Seoul
+      username: root
+      password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  batch:
+    job:
+      names: ${job.name:NONE}
+      enabled: true
+    jdbc:
+      initialize-schema: always
